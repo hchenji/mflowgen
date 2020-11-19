@@ -32,6 +32,7 @@ set dc_uniquify_with_design_name  $::env(uniquify_with_design_name)
 
 set dc_rtl_handoff              inputs/design.v
 set adk_dir                     inputs/adk
+set dc_rtl_flist                inputs/flist.vcs
 
 # Extra libraries
 #

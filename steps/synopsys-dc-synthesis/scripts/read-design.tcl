@@ -16,7 +16,14 @@ define_design_lib WORK -path ${dc_results_dir}/WORK
 
 # Analyze the RTL source file
 
-if { ![analyze -format sverilog $dc_rtl_handoff] } { exit 1 }
+# if { ![analyze -format sverilog $dc_rtl_handoff] } { exit 1 }
+
+set a [open $dc_rtl_flist]
+set lines [split [read $a] "\n"]
+close $a;                          # Saves a few bytes :-)
+foreach line $lines {
+    if { ![analyze -format sverilog ./inputs/$line] } { exit 1 }
+}
 
 # Elaborate the design with design parameters from a file, or else just
 # elaborate normally

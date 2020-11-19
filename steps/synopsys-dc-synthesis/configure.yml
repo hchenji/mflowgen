@@ -13,7 +13,8 @@ name: synopsys-dc-synthesis
 
 inputs:
   - adk
-  - design.v
+  - flist.vcs
+  - src
   - constraints.tcl
   - run.saif
 
@@ -80,7 +81,7 @@ preconditions:
 
   - assert Tool( 'dc_shell-xg-t' )           # tool check
   - assert File( 'inputs/adk' )              # must exist
-  - assert File( 'inputs/design.v' )         # must exist
+  - assert File( 'inputs/flist.vcs' )         # must exist
   - assert File( 'inputs/constraints.tcl' )  # must exist
 
 postconditions:
