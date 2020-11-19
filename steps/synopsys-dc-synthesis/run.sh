@@ -12,7 +12,7 @@ set -x
 
 # DC shell
 
-dc_exec='dc_shell-xg-t -64bit'
+dc_exec='design_vision -no_gui -64bit'
 
 # Build directories
 

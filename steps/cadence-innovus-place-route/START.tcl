@@ -58,6 +58,10 @@ foreach tcl $order {
   }
 }
 
+report_timing > mytiming.txt
+report_area -verbose > myarea.txt
+report_power -hierarchy all > mypower.txt
+
 #-------------------------------------------------------------------------
 # Clean up
 #-------------------------------------------------------------------------

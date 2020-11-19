@@ -79,6 +79,14 @@ parameters:
     - signoff/main.tcl
     - signoff/generate-results.tcl
     - signoff/reporting.tcl
+  cell_padding: 2
+  useful_skew: True
+  useful_skew_ccopt_effort: standard
+  hold_target_slack: 0.005
+  setup_target_slack: 0.000
+  signoff_engine: False
+
+
 
 #-------------------------------------------------------------------------
 # Debug
