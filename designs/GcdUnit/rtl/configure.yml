@@ -1,4 +1,5 @@
 name: rtl
 
 outputs:
-  - design.v
+  - src
+  - flist.vcs
