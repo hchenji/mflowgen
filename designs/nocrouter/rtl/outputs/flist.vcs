@@ -1,0 +1,17 @@
+src/rtl/noc/noc.sv
+src/if/router2router.sv
+src/if/input_block2crossbar.sv
+src/if/input_block2switch_allocator.sv
+src/if/input_block2vc_allocator.sv
+src/if/switch_allocator2crossbar.sv
+src/rtl/allocators/round_robin_arbiter.sv
+src/rtl/allocators/switch_allocator.sv
+src/rtl/allocators/vc_allocator.sv
+src/rtl/allocators/separable_input_first_allocator.sv
+src/rtl/input_port/circular_buffer.sv
+src/rtl/input_port/input_port.sv
+src/rtl/input_port/rc_unit.sv
+src/rtl/input_port/input_buffer.sv
+src/rtl/input_port/input_block.sv
+src/rtl/crossbar/crossbar.sv
+src/rtl/router/router.sv
