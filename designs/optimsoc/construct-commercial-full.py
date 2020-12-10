@@ -24,7 +24,7 @@ def construct():
 
   parameters = {
     'construct_path' : __file__,
-    'design_name'    : 'router',
+    'design_name'    : 'tb_compute_tile',
     'clock_period'   : 2.0,
     'adk'            : adk_name,
     'adk_view'       : adk_view,

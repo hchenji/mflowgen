@@ -65,9 +65,6 @@ src/src/soc/hw/wb_interconnect/verilog/wb_decode.sv
 src/src/soc/hw/wb_interconnect/verilog/wb_mux.sv
 src/src/soc/hw/wb_interconnect/verilog/wb_interconnect_arb_rr.v
 src/src/soc/hw/arbiter/arb_rr.sv
-src/external/glip/src/backend_tcp/logic/dpi/glip_tcp_toplevel.sv
-src/external/glip/src/backend_tcp/logic/dpi/glip_tcp_dpi.cpp
-src/external/glip/src/backend_tcp/logic/dpi/GlipTcp.cpp
 src/external/opensocdebug/hardware/blocks/buffer/common/dii_buffer.sv
 src/external/opensocdebug/hardware/blocks/buffer/common/osd_fifo.sv
 src/external/opensocdebug/hardware/blocks/eventpacket/common/osd_event_packetization.sv
