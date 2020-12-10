@@ -22,7 +22,12 @@ set a [open $dc_rtl_flist]
 set lines [split [read $a] "\n"]
 close $a;                          # Saves a few bytes :-)
 foreach line $lines {
-    if { ![analyze -format sverilog ./inputs/$line] } { exit 1 }
+    if { [string match +incdir+* $line] } {
+      lappend search_path [string range $line 8 end]
+      puts $search_path
+    } else {
+      if { ![analyze -format sverilog ./inputs/$line] } { exit 1 }
+    }
 }
 
 # Elaborate the design with design parameters from a file, or else just
