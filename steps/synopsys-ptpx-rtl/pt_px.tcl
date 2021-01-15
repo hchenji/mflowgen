@@ -14,7 +14,7 @@ set pt_search_path inputs/adk
 set pt_target_libraries stdcells.db
 set pt_design_name  $::env(design_name)
 set pt_reports reports
-set pt_clk clk
+set pt_clk $::env(clock_name)
 set pt_uut TOP
 set pt_clk_period $::env(clock_period)
 

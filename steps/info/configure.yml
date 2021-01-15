@@ -14,6 +14,7 @@ name: info
 commands:
   - echo "Design name      -- {design_name}"
   - echo "Clock period     -- {clock_period}"
+  - echo "Clock name       -- {clock_name}"
   - echo "ADK              -- {adk}"
   - echo "ADK view         -- {adk_view}"
   - echo
@@ -27,6 +28,7 @@ commands:
 parameters:
   design_name: undefined
   clock_period: 0
+  clock_name: 'clk'
   construct_path: undefined
   adk: undefined
   adk_view: undefined

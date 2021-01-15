@@ -24,8 +24,9 @@ def construct():
 
   parameters = {
     'construct_path' : __file__,
-    'design_name'    : 'mor1kx',
-    'clock_period'   : 2.0,
+    'design_name'    : 'mor1kx_module',
+    'clock_name'     : 'clk_i',
+    'clock_period'   : 2000,
     'adk'            : adk_name,
     'adk_view'       : adk_view,
     'topographical'  : True,

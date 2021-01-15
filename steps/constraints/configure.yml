@@ -21,3 +21,4 @@ outputs:
 parameters:
   clock_period: 1.0
   design_name: undefined
+  clock_name: clk

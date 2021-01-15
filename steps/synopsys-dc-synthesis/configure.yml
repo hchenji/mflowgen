@@ -37,6 +37,7 @@ commands:
 parameters:
   design_name: undefined
   clock_period: 1.0
+  clock_name: 'clk'
   # Path to the design instance in run.saif (e.g., tb/dut)
   saif_instance: undefined
   # Flatten effort 0 is strict hierarchy, 3 is full flattening

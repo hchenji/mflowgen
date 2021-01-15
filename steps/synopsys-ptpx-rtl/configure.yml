@@ -29,5 +29,6 @@ commands:
 
 parameters:
   clock_period: 1.0
+  clock_name: clk
   design_name: undefined
 
