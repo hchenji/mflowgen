@@ -1,0 +1,6 @@
+name: rtl
+
+outputs:
+  - flist.vcs
+  - src
+

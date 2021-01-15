@@ -24,7 +24,7 @@ def construct():
 
   parameters = {
     'construct_path' : __file__,
-    'design_name'    : 'compute_tile_dm',
+    'design_name'    : 'system_2x2_cccc_dm',
     'clock_name'     : 'clk',
     'clock_period'   : 2000,
     'adk'            : adk_name,
