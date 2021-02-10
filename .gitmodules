@@ -1,0 +1,3 @@
+[submodule "adks/asap-7nm"]
+	path = adks/asap-7nm
+	url = git@github.com:hchenji/asap-7nm.git
