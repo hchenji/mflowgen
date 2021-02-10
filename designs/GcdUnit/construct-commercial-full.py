@@ -19,7 +19,7 @@ def construct():
   # Parameters
   #-----------------------------------------------------------------------
 
-  adk_name = 'freepdk-45nm'
+  adk_name = 'asap-7nm'
   adk_view = 'view-standard'
 
   parameters = {
@@ -50,7 +50,7 @@ def construct():
 
   info           = Step( 'info',                           default=True )
   constraints    = Step( 'constraints',                    default=True )
-  dc             = Step( 'synopsys-dc-synthesis',          default=True )
+  dc             = Step( 'cadence-genus-synthesis',        default=True )
   iflow          = Step( 'cadence-innovus-flowsetup',      default=True )
   init           = Step( 'cadence-innovus-init',           default=True )
   power          = Step( 'cadence-innovus-power',          default=True )

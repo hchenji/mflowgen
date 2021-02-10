@@ -19,8 +19,8 @@ def construct():
   # Parameters
   #-----------------------------------------------------------------------
 
-  adk_name = 'freepdk-45nm'
-  adk_view = 'view-standard'
+  adk_name = 'nangate-15nm'
+  adk_view = 'view-tiny'
 
   parameters = {
     'construct_path' : __file__,

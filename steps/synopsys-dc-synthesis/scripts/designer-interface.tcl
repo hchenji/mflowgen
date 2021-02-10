@@ -68,7 +68,9 @@ set dc_tluplus_map              $adk_dir/rtk-tluplus.map
 set dc_tluplus_max              $adk_dir/rtk-max.tluplus
 set dc_tluplus_min              $adk_dir/rtk-min.tluplus
 set dc_adk_tcl                  $adk_dir/adk.tcl
-set dc_target_libraries         stdcells.db
+set dc_target_libraries         [join "
+                                    [glob -nocomplain inputs/adk/*.db]
+                                "]
 
 # Extra libraries
 

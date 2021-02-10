@@ -13,7 +13,8 @@ name: cadence-genus-synthesis
 
 inputs:
   - adk
-  - design.v
+  - src
+  - flist.vcs
   - constraints.tcl
 
 outputs:
@@ -43,6 +44,7 @@ commands:
 parameters:
   design_name: undefined
   clock_period: 1.0
+  clock_name: 'clk'
   # Automatic fine-grain clock gating
   gate_clock: True
   # Uniquify by prefixing every module in the design with the design name.
@@ -73,7 +75,7 @@ preconditions:
 
   - assert Tool( 'genus' )                   # tool check
   - assert File( 'inputs/adk' )              # must exist
-  - assert File( 'inputs/design.v' )         # must exist
+  - assert File( 'inputs/flist.vcs' )        # must exist
   - assert File( 'inputs/constraints.tcl' )  # must exist
 
 postconditions:

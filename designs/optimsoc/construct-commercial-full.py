@@ -26,7 +26,7 @@ def construct():
     'construct_path' : __file__,
     'design_name'    : 'compute_tile_dm',
     'clock_name'     : 'clk',
-    'clock_period'   : 2000,
+    'clock_period'   : 1,
     'adk'            : adk_name,
     'adk_view'       : adk_view,
     'topographical'  : True,

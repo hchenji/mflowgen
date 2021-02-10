@@ -13,10 +13,13 @@
 # Date   : July 14, 2020
 
 set design_name                $::env(design_name)
-set clock_period               $::env(clock_period)
+set dc_design_name             $::env(design_name)
+set dc_clock_period            $::env(clock_period)
 set gate_clock                 $::env(gate_clock)
 set uniquify_with_design_name  $::env(uniquify_with_design_name)
 set flatten_effort             $::env(flatten_effort)
+set dc_clock_name              $::env(clock_name)
+
 
 # Here we do a weird mapping from our DC flatten_effort to genus flatten_effort
 # flatten_effort=0 goes to no flattening
@@ -125,4 +128,4 @@ puts "INFO: Found LEF files $vars(lef_files)"
 foreach L $vars(lef_files) { echo "LEF    $L" }
 
 set vars(qrcTechFile) $vars(adk_dir)/pdk-typical-qrcTechFile
-
+set dc_rtl_flist                inputs/flist.vcs

@@ -39,6 +39,7 @@ commands:
 parameters:
   adk: freepdk-45nm
   adk_view: view-tiny
+  adk_files: stdcells.db
 
 #-------------------------------------------------------------------------
 # Special mflowgen tags
