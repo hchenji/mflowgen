@@ -28,7 +28,9 @@ def construct():
     'clock_period'   : 2.0,
     'adk'            : adk_name,
     'adk_view'       : adk_view,
-    'topographical'  : True,
+    'topographical'  : False,
+    'std_db'         : '\"simple.db seq.db invbuf.db ao.db\"',
+    'std_libs'       : '\"asap7sc7p5t_AO_RVT_TT_08302018.lib asap7sc7p5t_INVBUF_RVT_TT_08302018.lib asap7sc7p5t_SEQ_RVT_TT_08302018.lib asap7sc7p5t_SIMPLE_RVT_TT_08302018.lib \"',
   }
 
   #-----------------------------------------------------------------------
@@ -50,7 +52,7 @@ def construct():
 
   info           = Step( 'info',                           default=True )
   constraints    = Step( 'constraints',                    default=True )
-  dc             = Step( 'cadence-genus-synthesis',        default=True )
+  dc             = Step( 'synopsys-dc-synthesis',          default=True )
   iflow          = Step( 'cadence-innovus-flowsetup',      default=True )
   init           = Step( 'cadence-innovus-init',           default=True )
   power          = Step( 'cadence-innovus-power',          default=True )

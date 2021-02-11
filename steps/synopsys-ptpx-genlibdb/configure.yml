@@ -35,6 +35,7 @@ commands:
 
 parameters:
   design_name: undefined
+  std_db: 'stdcells.db'
   order:
     - read_design.tcl
     - extract_model.tcl

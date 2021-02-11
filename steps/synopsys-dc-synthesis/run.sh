@@ -70,7 +70,7 @@ cp -srf $PWD/inputs/adk/alib/* alib || true
 if [ "x$topographical" == "xTrue" ]; then
   opt_topographical='-topographical_mode'
 else
-  opt_topographical=
+  opt_topographical=''
 fi
 
 $dc_exec $opt_topographical -f START.tcl -output_log_file logs/dc.log || exit 1

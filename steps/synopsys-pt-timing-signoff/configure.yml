@@ -37,4 +37,5 @@ commands:
 
 parameters:
   design_name: undefined
+  std_db: 'stdcells.db'
 

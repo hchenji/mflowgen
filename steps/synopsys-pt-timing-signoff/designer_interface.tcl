@@ -15,9 +15,13 @@
 # Interface to the ASIC design kit
 #-------------------------------------------------------------------------
 
+set ptpx_std_db                   $::env(std_db)
+
 set ptpx_additional_search_path   inputs/adk
-set ptpx_target_libraries         inputs/adk/stdcells.db
-set ptpx_extra_link_libraries     [glob -nocomplain inputs/*.db]
+# set ptpx_target_libraries         inputs/adk/stdcells.db
+set ptpx_target_libraries         $ptpx_std_db
+# set ptpx_extra_link_libraries     [glob -nocomplain inputs/*.db]
+set ptpx_extra_link_libraries     $ptpx_std_db
 
 #-------------------------------------------------------------------------
 # Interface to the build system

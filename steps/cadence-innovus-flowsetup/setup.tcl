@@ -30,6 +30,7 @@ global vars
 #-------------------------------------------------------------------------
 
 set vars(design)              $::env(design_name)
+set vars(std_libs)            $::env(std_libs)
 
 #-------------------------------------------------------------------------
 # Inputs
@@ -74,15 +75,21 @@ source $vars(adk_dir)/adk.tcl
 
 set vars(library_sets)        "libs_typical"
 
-set vars(libs_typical,timing) [join "
-                                $vars(adk_dir)/stdcells.lib
-                                [glob -nocomplain $vars(adk_dir)/stdcells-lvt.lib]
-                                [glob -nocomplain $vars(adk_dir)/stdcells-ulvt.lib]
-                                [glob -nocomplain $vars(adk_dir)/stdcells-pm.lib]
-                                [glob -nocomplain $vars(adk_dir)/iocells.lib]
-                                [glob -nocomplain inputs/*tt*.lib]
-                                [glob -nocomplain inputs/*TT*.lib]
-                              "]
+# set vars(libs_typical,timing) [join "
+#                                 $vars(adk_dir)/stdcells.lib
+#                                 [glob -nocomplain $vars(adk_dir)/stdcells-lvt.lib]
+#                                 [glob -nocomplain $vars(adk_dir)/stdcells-ulvt.lib]
+#                                 [glob -nocomplain $vars(adk_dir)/stdcells-pm.lib]
+#                                 [glob -nocomplain $vars(adk_dir)/iocells.lib]
+#                                 [glob -nocomplain inputs/*tt*.lib]
+#                                 [glob -nocomplain inputs/*TT*.lib]
+#                               "]
+
+foreach lib [split $vars(std_libs) " "] {
+  append vars(libs_typical,timing) $vars(adk_dir)/$lib " "
+}
+
+# set vars(libs_typical,timing)   $vars(std_libs)
 
 # The best case is:
 #

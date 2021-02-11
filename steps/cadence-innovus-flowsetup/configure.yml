@@ -35,6 +35,7 @@ parameters:
   nthreads: 16        # multithreading available to the tool
   express_flow: False # enable express flow
   skip_verify_connectivity: False
+  std_libs: 'stdcells.lib'
 
 #-------------------------------------------------------------------------
 # Assertions

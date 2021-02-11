@@ -28,6 +28,7 @@ set dc_gate_clock                 $::env(gate_clock)
 set dc_uniquify_with_design_name  $::env(uniquify_with_design_name)
 set dc_suppress_msg 			  $::env(suppress_msg)
 set dc_suppressed_msg  			  [split $::env(suppressed_msg) ","]
+set dc_std_db        			  $::env(std_db)
 
 #-------------------------------------------------------------------------
 # Inputs
@@ -53,10 +54,12 @@ set dc_rtl_flist                inputs/flist.vcs
 #                                  extra3.db
 #                                "]
 
-set dc_extra_link_libraries     [join "
-                                    [glob -nocomplain inputs/*.db]
-                                    [glob -nocomplain inputs/adk/*.db]
-                                "]
+# set dc_extra_link_libraries     [join "
+                                    # [glob -nocomplain inputs/*.db]
+                                    # [glob -nocomplain inputs/adk/*.db]
+                                # "]
+
+set dc_extra_link_libraries     $dc_std_db
 
 #-------------------------------------------------------------------------
 # Interface to the ASIC design kit
@@ -68,9 +71,7 @@ set dc_tluplus_map              $adk_dir/rtk-tluplus.map
 set dc_tluplus_max              $adk_dir/rtk-max.tluplus
 set dc_tluplus_min              $adk_dir/rtk-min.tluplus
 set dc_adk_tcl                  $adk_dir/adk.tcl
-set dc_target_libraries         [join "
-                                    [glob -nocomplain inputs/adk/*.db]
-                                "]
+set dc_target_libraries         $dc_std_db
 
 # Extra libraries
 

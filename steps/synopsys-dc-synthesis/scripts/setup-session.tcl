@@ -68,26 +68,26 @@ set_app_var link_library       [join "
 
 set milkyway_library ${dc_design_name}_lib
 
-if {![file isdirectory $milkyway_library ]} {
+# if {![file isdirectory $milkyway_library ]} {
 
-  # Create a new Milkyway library
+#   # Create a new Milkyway library
 
-  extend_mw_layers
-  create_mw_lib -technology           $dc_milkyway_tf            \
-                -mw_reference_library $dc_milkyway_ref_libraries \
-                $milkyway_library
+#   extend_mw_layers
+#   create_mw_lib -technology           $dc_milkyway_tf            \
+#                 -mw_reference_library $dc_milkyway_ref_libraries \
+#                 $milkyway_library
 
-} else {
+# } else {
 
-  # Reuse existing Milkyway library, but ensure that it is consistent with
-  # the provided reference Milkyway libraries.
+#   # Reuse existing Milkyway library, but ensure that it is consistent with
+#   # the provided reference Milkyway libraries.
 
-  set_mw_lib_reference $milkyway_library \
-    -mw_reference_library $dc_milkyway_ref_libraries
+#   set_mw_lib_reference $milkyway_library \
+#     -mw_reference_library $dc_milkyway_ref_libraries
 
-}
+# }
 
-open_mw_lib $milkyway_library
+# open_mw_lib $milkyway_library
 
 # Set up TLU plus (if the files exist)
 
