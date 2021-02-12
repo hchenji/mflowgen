@@ -48,7 +48,13 @@ set_max_fanout 20 $dc_design_name
 
 # Make all signals meet good slew
 
-set_max_transition [expr 0.25*${dc_clock_period}] $dc_design_name
+# cadence complains about slew
+if {[string first "cad" $::env(adk_view)] != -1} {
+    set_max_transition 10 $dc_design_name
+} else {
+    set_max_transition [expr 0.25*${dc_clock_period}] $dc_design_name
+}
+
 
 # set_max_transition 10 $dc_design_name
 

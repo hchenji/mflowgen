@@ -19,7 +19,7 @@ def construct():
   # Parameters
   #-----------------------------------------------------------------------
 
-  adk_name = 'syn-14nm'
+  adk_name = 'freepdk-45nm'
   adk_view = 'view-standard'
 
   parameters = {
@@ -29,8 +29,6 @@ def construct():
     'adk'            : adk_name,
     'adk_view'       : adk_view,
     'topographical'  : True,
-    'std_db'         : 'stdcells.db',
-    'std_libs'       : 'stdcells.lib'
   }
 
   #-----------------------------------------------------------------------

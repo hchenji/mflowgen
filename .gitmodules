@@ -1,3 +1,6 @@
 [submodule "adks/asap-7nm"]
 	path = adks/asap-7nm
 	url = git@github.com:hchenji/asap-7nm.git
+[submodule "adks/syn-14nm"]
+	path = adks/syn-14nm
+	url = git@github.com:hchenji/syn-14nm.git
