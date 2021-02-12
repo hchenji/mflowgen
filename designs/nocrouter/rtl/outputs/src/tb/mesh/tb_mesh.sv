@@ -24,7 +24,7 @@ module tb_mesh #(
     logic [MESH_SIZE_X-1:0][MESH_SIZE_Y-1:0] is_valid_o;
     logic [MESH_SIZE_X-1:0][MESH_SIZE_Y-1:0][VC_NUM-1:0] is_on_off_o;
     logic [MESH_SIZE_X-1:0][MESH_SIZE_Y-1:0][VC_NUM-1:0] is_allocatable_o;
-    logic [VC_NUM-1:0] error_o [MESH_SIZE_X-1:0][MESH_SIZE_Y-1:0][PORT_NUM-1:0];
+    logic [VC_NUM-1:0] err_o [MESH_SIZE_X-1:0][MESH_SIZE_Y-1:0][PORT_NUM-1:0];
     flit_t [MESH_SIZE_X-1:0][MESH_SIZE_Y-1:0] data_o;
     //Testbench values
     flit_t flit_queue[MESH_SIZE_X-1:0][MESH_SIZE_Y-1:0][$];
@@ -48,7 +48,7 @@ module tb_mesh #(
         .is_valid_o(is_valid_o),
         .is_on_off_o(is_on_off_o),
         .is_allocatable_o(is_allocatable_o),
-        .error_o(error_o)
+        .err_o(err_o)
     );
 
 

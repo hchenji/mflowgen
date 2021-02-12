@@ -21,7 +21,7 @@ module router #(
     router2router.downstream router_if_south_down,
     router2router.downstream router_if_west_down,
     router2router.downstream router_if_east_down,
-    output logic [VC_NUM-1:0] error_o [PORT_NUM-1:0]
+    output logic [VC_NUM-1:0] err_o [PORT_NUM-1:0]
 );
 
     //connections from upstream
@@ -110,7 +110,7 @@ module router #(
         .va_if(ib2va_if),
         .on_off_o(on_off_out),
         .vc_allocatable_o(is_allocatable_out),
-        .error_o(error_o)
+        .err_o(err_o)
     );
 
     crossbar #(

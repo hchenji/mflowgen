@@ -22,7 +22,7 @@ module input_port #(
     output port_t [VC_NUM-1:0] out_port_o,
     output logic [VC_NUM-1:0] is_full_o,
     output logic [VC_NUM-1:0] is_empty_o,
-    output logic [VC_NUM-1:0] error_o
+    output logic [VC_NUM-1:0] err_o
 );
 
     flit_novc_t data_cmd;
@@ -58,7 +58,7 @@ module input_port #(
                 .switch_request_o(sa_request_o[vc]),
                 .vc_allocatable_o(is_allocatable_vc_o[vc]),
                 .downstream_vc_o(sa_downstream_vc_o[vc]),
-                .error_o(error_o[vc])
+                .err_o(err_o[vc])
             );
         end
     endgenerate

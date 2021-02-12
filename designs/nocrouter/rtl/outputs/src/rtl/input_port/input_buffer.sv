@@ -20,7 +20,7 @@ module input_buffer #(
     output logic switch_request_o,
     output logic vc_allocatable_o,
     output logic [VC_SIZE-1:0] downstream_vc_o,
-    output logic error_o
+    output logic err_o
 );
 
     enum logic [1:0] {IDLE, VA, SA} ss, ss_next;
@@ -30,7 +30,7 @@ module input_buffer #(
     logic read_cmd, write_cmd;
     logic end_packet, end_packet_next;
     logic vc_allocatable_next;
-    logic error_next;
+    logic err_nxt;
 
     flit_novc_t read_flit;
 
@@ -68,7 +68,7 @@ module input_buffer #(
             downstream_vc_o     <= 0;
             end_packet          <= 0;
             vc_allocatable_o    <= 0;
-            error_o             <= 0;
+            err_o             <= 0;
         end
         else
         begin
@@ -77,7 +77,7 @@ module input_buffer #(
             downstream_vc_o     <= downstream_vc_next;
             end_packet          <= end_packet_next;
             vc_allocatable_o    <= vc_allocatable_next;
-            error_o             <= error_next;
+            err_o             <= err_nxt;
         end
     end
 
@@ -108,7 +108,7 @@ module input_buffer #(
         write_cmd = 0;
 
         end_packet_next = end_packet;
-        error_next = 0;
+        err_nxt = 0;
 
         vc_request_o = 0;
         switch_request_o = 0;
@@ -126,7 +126,7 @@ module input_buffer #(
 
                 if(vc_valid_i | read_i | ((data_i.flit_label == BODY | data_i.flit_label == TAIL) & write_i) | ~is_empty_o)
                 begin
-                    error_next = 1;
+                    err_nxt = 1;
                 end
                 if(write_i & data_i.flit_label == HEADTAIL)
                 begin
@@ -150,7 +150,7 @@ module input_buffer #(
 
                 if((write_i & (end_packet | data_i.flit_label == HEAD | data_i.flit_label == HEADTAIL)) | read_i)
                 begin
-                    error_next = 1;
+                    err_nxt = 1;
                 end
                 if(write_i & data_i.flit_label == TAIL)
                 begin
@@ -180,7 +180,7 @@ module input_buffer #(
 
                 if((write_i & (end_packet | data_i.flit_label == HEAD | data_i.flit_label == HEADTAIL)) | vc_valid_i)
                 begin
-                    error_next = 1;
+                    err_nxt = 1;
                 end
                 if(write_i & data_i.flit_label == TAIL)
                 begin
@@ -192,7 +192,7 @@ module input_buffer #(
             begin
                 ss_next = IDLE;
                 vc_allocatable_next = 1;
-                error_next = 1;
+                err_nxt = 1;
                 end_packet_next = 0;
             end
 

@@ -19,7 +19,7 @@ module tb_all_modules;
 
     logic clk;
     logic rst;
-    logic [VC_NUM-1:0] error_o [PORT_NUM-1:0];
+    logic [VC_NUM-1:0] err_o [PORT_NUM-1:0];
 
     //connections from upstream
     flit_t data_out [PORT_NUM-1:0];
@@ -55,7 +55,7 @@ module tb_all_modules;
         .va_if(ib2va_if),
         .on_off_o(on_off_out),
         .vc_allocatable_o(is_allocatable_out),
-        .error_o(error_o)
+        .err_o(err_o)
     );
 
     crossbar #(

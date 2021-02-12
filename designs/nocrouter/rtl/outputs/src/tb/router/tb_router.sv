@@ -16,7 +16,7 @@ module tb_router;
 
     logic clk;
     logic rst;
-    wire [VC_NUM-1:0] error_o [PORT_NUM-1:0];
+    wire [VC_NUM-1:0] err_o [PORT_NUM-1:0];
 
     //connections from upstream
     flit_t data_out [PORT_NUM-1:0];
@@ -63,7 +63,7 @@ module tb_router;
         .router_if_south_down(south_down),
         .router_if_west_down(west_down),
         .router_if_east_down(east_down),
-        .error_o(error_o)
+        .err_o(err_o)
     );
 
     routers_mock routers_mock (
@@ -538,7 +538,7 @@ module tb_router;
             valid_flit_in[0] = 0;
         @(negedge clk)
         begin
-            if(~(error_o[0][0]))
+            if(~(err_o[0][0]))
                 #20 $finish;
         end
         @(posedge clk)
@@ -550,7 +550,7 @@ module tb_router;
             valid_flit_in[0] = 0;
         @(negedge clk)
         begin
-            if(~(error_o[0][0]))
+            if(~(err_o[0][0]))
                 #20 $finish;
         end
     endtask

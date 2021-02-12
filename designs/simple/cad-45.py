@@ -19,18 +19,18 @@ def construct():
   # Parameters
   #-----------------------------------------------------------------------
 
-  adk_name = 'syn-14nm'
-  adk_view = 'view-standard'
+  adk_name = 'cad-45nm'
+  adk_view = 'view-cad'
 
   parameters = {
     'construct_path' : __file__,
-    'design_name'    : 'GcdUnit',
+    'design_name'    : 'simple',
     'clock_period'   : 2.0,
     'adk'            : adk_name,
     'adk_view'       : adk_view,
-    'topographical'  : True,
-    'std_db'         : 'stdcells.db',
-    'std_libs'       : 'stdcells.lib'
+    'topographical'  : False,
+    'std_db'         : '\"stdcells.db\"',
+    'std_libs'       : '\"stdcells.lib\"',
   }
 
   #-----------------------------------------------------------------------
@@ -52,7 +52,7 @@ def construct():
 
   info           = Step( 'info',                           default=True )
   constraints    = Step( 'constraints',                    default=True )
-  dc             = Step( 'synopsys-dc-synthesis',          default=True )
+  dc             = Step( 'cadence-genus-synthesis',        default=True )
   iflow          = Step( 'cadence-innovus-flowsetup',      default=True )
   init           = Step( 'cadence-innovus-init',           default=True )
   power          = Step( 'cadence-innovus-power',          default=True )

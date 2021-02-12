@@ -24,13 +24,11 @@ def construct():
 
   parameters = {
     'construct_path' : __file__,
-    'design_name'    : 'GcdUnit',
+    'design_name'    : 'simple',
     'clock_period'   : 2.0,
     'adk'            : adk_name,
     'adk_view'       : adk_view,
     'topographical'  : True,
-    'std_db'         : 'stdcells.db',
-    'std_libs'       : 'stdcells.lib'
   }
 
   #-----------------------------------------------------------------------

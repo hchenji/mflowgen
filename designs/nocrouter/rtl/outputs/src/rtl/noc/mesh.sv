@@ -7,7 +7,7 @@ module mesh #(
 )(
     input clk,
     input rst,
-    output logic [VC_NUM-1:0] error_o [MESH_SIZE_X-1:0][MESH_SIZE_Y-1:0][PORT_NUM-1:0],
+    output logic [VC_NUM-1:0] err_o [MESH_SIZE_X-1:0][MESH_SIZE_Y-1:0][PORT_NUM-1:0],
     //connections to all local Router interfaces
     output flit_t [MESH_SIZE_X-1:0][MESH_SIZE_Y-1:0] data_o,
     output logic [MESH_SIZE_X-1:0][MESH_SIZE_Y-1:0] is_valid_o,
@@ -57,7 +57,7 @@ module mesh #(
                     .router_if_south_down(south_down),
                     .router_if_west_down(west_down),
                     .router_if_east_down(east_down),
-                    .error_o(error_o[col][row])
+                    .err_o(err_o[col][row])
                 );
             end
         end

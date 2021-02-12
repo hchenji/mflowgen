@@ -21,7 +21,7 @@ module tb_two_routers;
    logic clk;
    logic rst;
 
-   wire [VC_NUM-1:0] error_o [ROUTER_NUM-1:0][PORT_NUM-1:0];
+   wire [VC_NUM-1:0] err_o [ROUTER_NUM-1:0][PORT_NUM-1:0];
 
    //connections from upstream
    flit_t u_data_out [PORT_NUM-1:0];
@@ -85,7 +85,7 @@ module tb_two_routers;
    upstream_router (
        .clk(clk),
        .rst(rst),
-       .error_o(error_o[0]),
+       .err_o(err_o[0]),
        //router2router.upstream 
        .router_if_east_up(routers_link),
        //router2router.downstream
@@ -109,7 +109,7 @@ module tb_two_routers;
    downstream_router (
        .clk(clk),
        .rst(rst),
-       .error_o(error_o[1]),
+       .err_o(err_o[1]),
        //router2router.upstream 
        .router_if_local_up(d_local_up),
        .router_if_north_up(d_north_up),

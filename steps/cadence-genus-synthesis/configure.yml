@@ -45,6 +45,9 @@ parameters:
   design_name: undefined
   clock_period: 1.0
   clock_name: 'clk'
+  std_db: 'stdcells.db'
+  std_libs: 'stdcells.lib'
+  adk_view: 'view-standard'
   # Automatic fine-grain clock gating
   gate_clock: True
   # Uniquify by prefixing every module in the design with the design name.

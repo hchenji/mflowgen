@@ -38,6 +38,7 @@ parameters:
   design_name: undefined
   clock_period: 1.0
   clock_name: 'clk'
+  adk_view: 'view-standard'
   std_db: 'stdcells.db'
   # Path to the design instance in run.saif (e.g., tb/dut)
   saif_instance: undefined

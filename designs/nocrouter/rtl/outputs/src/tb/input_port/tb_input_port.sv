@@ -44,7 +44,7 @@ module tb_input_port #(
     port_t [VC_NUM-1:0] out_port_o;
     wire [VC_NUM-1:0] is_full_o;
     wire [VC_NUM-1:0] is_empty_o;
-    wire [VC_NUM-1:0] error_o;
+    wire [VC_NUM-1:0] err_o;
 
     //DUT INSTANTIATION
     input_port #(
@@ -70,7 +70,7 @@ module tb_input_port #(
        .out_port_o(out_port_o),
        .is_full_o(is_full_o),
        .is_empty_o(is_empty_o),
-       .error_o(error_o)
+       .err_o(err_o)
     );
 
     initial

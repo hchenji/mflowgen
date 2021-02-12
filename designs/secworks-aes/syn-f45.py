@@ -19,18 +19,17 @@ def construct():
   # Parameters
   #-----------------------------------------------------------------------
 
-  adk_name = 'syn-14nm'
+  adk_name = 'freepdk-45nm'
   adk_view = 'view-standard'
 
   parameters = {
     'construct_path' : __file__,
-    'design_name'    : 'GcdUnit',
-    'clock_period'   : 2.0,
+    'design_name'    : 'aes',
+    'clock_name'     : 'clk',
+    'clock_period'   : 1,
     'adk'            : adk_name,
     'adk_view'       : adk_view,
     'topographical'  : True,
-    'std_db'         : 'stdcells.db',
-    'std_libs'       : 'stdcells.lib'
   }
 
   #-----------------------------------------------------------------------

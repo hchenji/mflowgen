@@ -19,6 +19,7 @@ set gate_clock                 $::env(gate_clock)
 set uniquify_with_design_name  $::env(uniquify_with_design_name)
 set flatten_effort             $::env(flatten_effort)
 set dc_clock_name              $::env(clock_name)
+set vars(std_libs)             $::env(std_libs)
 
 
 # Here we do a weird mapping from our DC flatten_effort to genus flatten_effort
@@ -56,16 +57,21 @@ set vars(adk_dir) inputs/adk
 #-------------------------------------------------------------------------
 # Typical-case libraries
 
-set vars(libs_typical,timing) \
-    [join "
-        $vars(adk_dir)/stdcells.lib
-        [lsort [glob -nocomplain $vars(adk_dir)/stdcells-lvt.lib]]
-        [lsort [glob -nocomplain $vars(adk_dir)/stdcells-ulvt.lib]]
-        [lsort [glob -nocomplain $vars(adk_dir)/stdcells-pm.lib]]
-        [lsort [glob -nocomplain $vars(adk_dir)/iocells.lib]]
-        [lsort [glob -nocomplain inputs/*tt*.lib]]
-        [lsort [glob -nocomplain inputs/*TT*.lib]]
-        "]
+# set vars(libs_typical,timing) \
+#     [join "
+#         $vars(adk_dir)/stdcells.lib
+#         [lsort [glob -nocomplain $vars(adk_dir)/stdcells-lvt.lib]]
+#         [lsort [glob -nocomplain $vars(adk_dir)/stdcells-ulvt.lib]]
+#         [lsort [glob -nocomplain $vars(adk_dir)/stdcells-pm.lib]]
+#         [lsort [glob -nocomplain $vars(adk_dir)/iocells.lib]]
+#         [lsort [glob -nocomplain inputs/*tt*.lib]]
+#         [lsort [glob -nocomplain inputs/*TT*.lib]]
+#         "]
+
+foreach lib [split $vars(std_libs) " "] {
+  append vars(libs_typical,timing) $vars(adk_dir)/$lib " "
+}
+
 puts "INFO: Found typical-typical libraries $vars(libs_typical,timing)"
 foreach L $vars(libs_typical,timing) { echo "L_TT    $L" }
 

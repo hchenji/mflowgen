@@ -19,8 +19,8 @@ def construct():
   # Parameters
   #-----------------------------------------------------------------------
 
-  adk_name = 'syn-14nm'
-  adk_view = 'view-standard'
+  adk_name = 'syn-3228nm'
+  adk_view = 'view-syn'
 
   parameters = {
     'construct_path' : __file__,
@@ -29,8 +29,8 @@ def construct():
     'adk'            : adk_name,
     'adk_view'       : adk_view,
     'topographical'  : True,
-    'std_db'         : 'stdcells.db',
-    'std_libs'       : 'stdcells.lib'
+    'std_db'         : '\"saed32rvt_tt1p05v25c.db saed32rvt_pg_tt1p05v25c.db\"',
+    'std_libs'       : '\"saed32rvt_tt1p05v25c.lib saed32rvt_pg_tt1p05v25c.lib\"',
   }
 
   #-----------------------------------------------------------------------
