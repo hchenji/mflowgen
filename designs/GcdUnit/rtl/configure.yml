@@ -3,3 +3,4 @@ name: rtl
 outputs:
   - src
   - flist.vcs
+  - design.v
